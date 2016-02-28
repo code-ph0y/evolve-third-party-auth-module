@@ -1,0 +1,6 @@
+ThirdPartyAuthModule_Facebook_Authenticate:
+    pattern: /fb/authenticate
+    defaults: { _controller: "ThirdPartyAuthModule:Facebook:authenticate"}
+ThirdPartyAuthModule_Google_Authenticate:
+    pattern: /google/authenticate
+    defaults: { _controller: "ThirdPartyAuthModule:Google:authenticate"}
