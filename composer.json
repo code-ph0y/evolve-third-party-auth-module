@@ -1,0 +1,25 @@
+{
+    "name": "evolve/third-party-auth-module",
+    "description": "The Evolve App - Third Party Auth Module",
+    "license": "MIT",
+    "keywords": ["framework", "user"],
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ross Moroney",
+            "email": "code.ph0y@googlemail.com"
+        }
+    ],
+    "require": {
+        "hwi/oauth-bundle": "0.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ThirdPartyAuthModule\\": "src/",
+            "ThirdPartyAuthModule\\Tests\\": "tests/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
