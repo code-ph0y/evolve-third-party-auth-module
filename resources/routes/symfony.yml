@@ -1,3 +1,6 @@
+ThirdPartyAuthModule_Login:
+    pattern: /tpa/login
+    defaults: { _controller: "ThirdPartyAuthModule:Auth:login"}
 ThirdPartyAuthModule_Facebook_Authenticate:
     pattern: /fb/authenticate
     defaults: { _controller: "ThirdPartyAuthModule:Facebook:authenticate"}
