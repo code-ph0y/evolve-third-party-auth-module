@@ -6,7 +6,7 @@
 
 <div class="row">
     <div class="col-md-4 col-md-offset-3">
-        <a class="btn btn-block btn-social btn-facebook">
+        <a class="btn btn-block btn-social btn-facebook" href="<?php echo $view['router']->generate('ThirdPartyAuthModule_Facebook_Authenticate'); ?>">
           <span class="fa fa-facebook"></span> Sign in with Facebook
         </a>
 
