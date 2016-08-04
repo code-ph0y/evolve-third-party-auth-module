@@ -15,25 +15,14 @@ class OAuth
 
     private $clientSecret = null;
 
-    private $scope = array();
+    private $scope = null;
 
-    public function __construct($service_type, $client_key, $client_secret)
+    public function __construct(ServiceFactory $service_factory, $client_key, $client_secret)
     {
-        // Create the service factory
-        if (is_null($this->serviceFactory)) {
-            $this->serviceFactory = new ServiceFactory();
-        }
 
-        // Store client id
-        $this->clientId = $client_key;
-
-        // Store client secret
-        $this->clientSecret = $client_secret;
-
-        return $this->authorise();
     }
 
-    public function authorise()
+    public function authenticate(array $config, $baseURL)
     {
         // Session storage
         $storage = new Session();
