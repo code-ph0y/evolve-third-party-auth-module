@@ -32,7 +32,7 @@ class Module extends AbstractModule
      */
     public function getConfig()
     {
-        return $this->loadConfig(__DIR__ . '/resources/config/config.php');
+        return $this->loadConfig(__DIR__ . '/resources/config/config.yml');
     }
 
     /**
