@@ -15,14 +15,25 @@ class OAuth
 
     private $clientSecret = null;
 
-    private $scope = null;
+    private $scope = array();
 
-    public function __construct(ServiceFactory $service_factory, $client_key, $client_secret)
+    public function __construct($service_type, $client_key, $client_secret)
     {
+        // Create the service factory
+        if (is_null($this->serviceFactory)) {
+            $this->serviceFactory = new ServiceFactory();
+        }
 
+        // Store client id
+        $this->clientId = $client_key;
+
+        // Store client secret
+        $this->clientSecret = $client_secret;
+
+        return $this->authorise();
     }
 
-    public function authenticate(array $config, $baseURL)
+    public function authorise()
     {
         // Session storage
         $storage = new Session();
@@ -36,7 +47,7 @@ class OAuth
 
         $sf = new ServiceFactory();
 
-        // Create a new FB Service
-        $fbService = new FacebookService($credentials, );
+        // Create a new Service
+        $service = new FacebookService($credentials, );
     }
 }
