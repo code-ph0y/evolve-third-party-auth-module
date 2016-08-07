@@ -6,16 +6,18 @@
 
 <div class="row">
     <div class="col-md-4 col-md-offset-3">
-        <a class="btn btn-block btn-social btn-facebook" href="<?php echo $view['router']->generate('ThirdPartyAuthModule_Facebook_Authenticate'); ?>">
-          <span class="fa fa-facebook"></span> Sign in with Facebook
-        </a>
-
-        <a class="btn btn-block btn-social btn-twitter">
-          <span class="fa fa-twitter"></span> Sign in with Twitter
-        </a>
-
-        <a class="btn btn-block btn-social btn-google">
-          <span class="fa fa-google"></span> Sign in with Google
-        </a>
+        <h1>Login With</h1>
+        <hr />
+        <?php if(!empty($activeThirdParties)) : ?>
+            <?php foreach ($activeThirdParties as $service) : ?>
+                <a class="btn btn-block btn-social btn-<?php echo $service; ?>" href="<?php echo $view['router']->generate('ThirdPartyAuthModule_Authorise', array('service' => $service)); ?>">
+                  <span class="fa fa-<?php echo $service; ?>"></span> Sign in with <?php echo ucfirst($service); ?>
+                </a>
+            <?php endforeach; ?>
+        <?php else : ?>
+            <div class="alert alert-info">
+                No Third Parties have been setup
+            </div>
+        <?php endif; ?>
     </div>
 </div>

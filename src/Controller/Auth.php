@@ -29,7 +29,7 @@ class Auth extends SharedController
             }
         }
 
-        return $this->render('ThirdPartyAuthModule:auth:login.html.php');
+        return $this->render('ThirdPartyAuthModule:auth:login.html.php', compact('activeThirdParties'));
     }
 
     /**
@@ -41,7 +41,7 @@ class Auth extends SharedController
     public function authoriseAction(Request $request)
     {
         //@todo - Authorise with Third Party no matter what service you use
-        
+
         /*
         $config = $this->getConfig();
 

@@ -141,5 +141,5 @@ thirdparties:
         key: ""
         secret: ""
     yammer:
-        key: "test"
-        secret: "test"
+        key: ""
+        secret: ""

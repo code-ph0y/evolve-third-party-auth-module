@@ -63,8 +63,8 @@ class Module extends AbstractModule
                  return new \AdminModule\Storage\User($sm->get('datasource')->getConnection('main'));
             },
 
-            'fb.auth' => function ($sm) {
-                return new \ThirdPartyAuthModule\Classes\FacebookAuth();
+            'oauth' => function ($sm) {
+                return new \ThirdPartyAuthModule\Classes\OAuth();
             }
         ));
     }
